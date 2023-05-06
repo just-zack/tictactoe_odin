@@ -51,61 +51,73 @@ const game = (() => {
       gameboard[2] === player1.token &&
       gameboard[3] === player1.token
     ) {
-      let display = player1Name + " wins!";
+      display = player1Name + " wins!";
     } else if (
       gameboard[4] === player1.token &&
       gameboard[5] === player1.token &&
       gameboard[6] === player1.token
     ) {
-      let display = player1Name + " wins!";
+      display = player1Name + " wins!";
     } else if (
       gameboard[7] === player1.token &&
       gameboard[8] === player1.token &&
       gameboard[9] === player1.token
     ) {
-      let display = player1Name + " wins!";
+      display = player1Name + " wins!";
     } else if (
       gameboard[1] === player1.token &&
       gameboard[5] === player1.token &&
       gameboard[9] === player1.token
     ) {
-      let display = player1Name + " wins!";
+      display = player1Name + " wins!";
     } else if (
       gameboard[3] === player1.token &&
       gameboard[5] === player1.token &&
       gameboard[7] === player1.token
     ) {
-      let display = player1Name + " wins!";
+      display = player1Name + " wins!";
     } else if (
       gameboard[1] === player2.token &&
       gameboard[2] === player2.token &&
       gameboard[3] === player2.token
     ) {
-      let display = player2Name + " wins!";
+      display = player2Name + " wins!";
     } else if (
       gameboard[4] === player2.token &&
       gameboard[5] === player2.token &&
       gameboard[6] === player2.token
     ) {
-      let display = player2Name + " wins!";
+      display = player2Name + " wins!";
     } else if (
       gameboard[7] === player2.token &&
       gameboard[8] === player2.token &&
       gameboard[9] === player2.token
     ) {
-      let display = player2Name + " wins!";
+      display = player2Name + " wins!";
     } else if (
       gameboard[1] === player2.token &&
       gameboard[5] === player2.token &&
       gameboard[9] === player2.token
     ) {
-      let display = player2Name + " wins!";
+      display = player2Name + " wins!";
     } else if (
       gameboard[3] === player2.token &&
       gameboard[5] === player2.token &&
       gameboard[7] === player2.token
     ) {
-      let display = player2Name + " wins!";
+      display = player2Name + " wins!";
+    } else if (
+      gameboard[1] !== "" &&
+      gameboard[2] !== "" &&
+      gameboard[3] !== "" &&
+      gameboard[4] !== "" &&
+      gameboard[5] !== "" &&
+      gameboard[6] !== "" &&
+      gameboard[7] !== "" &&
+      gameboard[8] !== "" &&
+      gameboard[9] !== ""
+    ) {
+      display = "Its a Tie!";
     }
   };
 })();
