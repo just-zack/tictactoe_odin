@@ -31,11 +31,28 @@ gameboard
 - display ellement
 
 */
-let display;
+const modal = document.getElementById("modal");
+const submitBtn = document.getElementById("submit");
+const userInput = document.getElementById("player_name");
+submitBtn.addEventListener("click", submit);
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+function overrideSubmit(event) {
+  event.preventDefault();
+}
+
+function submit() {
+  overrideSubmit(event);
+  player1name = userInput.value;
+  closeModal();
+}
 
 const Player = (name, token) => {
   const getName = () => name;
-  const token = () => token;
+  const getToken = () => token;
 
   return { getName, token };
 };
@@ -122,8 +139,6 @@ const game = (() => {
   };
 })();
 
-let player1Name;
-let player2Name;
 let p1Token;
 let p2Token;
 const player1 = Player("player1Name", p1Token);
