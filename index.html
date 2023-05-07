@@ -14,6 +14,11 @@
         <form>
           <label for="player_name">What's your name?</label>
           <input type="text" id="player_name" name="player_name" />
+          <h3 id="play_as">Play as:</h3>
+          <div id="play_as_container">
+            <button type="button" id="X" class="play_choice">X</button>
+            <button type="button" id="O" class="play_choice">O</button>
+          </div>
           <button type="submit" id="submit">Start Game</button>
         </form>
       </div>
@@ -32,11 +37,7 @@
         <div id="3b" class="game_section"></div>
         <div id="3c" class="game_section"></div>
       </div>
-      <div id="button_container">
-        <button id="play_as_x" class="player_buttons">Play as X</button>
-        <button id="play_as_o" class="player_buttons">Play as O</button>
-        <button id="restart" class="player_buttons">Restart</button>
-      </div>
+      <button id="restart" class="player_buttons">Restart</button>
     </div>
   </body>
   <script src="tictactoe.js"></script>

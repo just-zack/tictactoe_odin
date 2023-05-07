@@ -34,7 +34,20 @@ gameboard
 const modal = document.getElementById("modal");
 const submitBtn = document.getElementById("submit");
 const userInput = document.getElementById("player_name");
+const X = document.getElementById("X");
+const O = document.getElementById("O");
+let playerToken;
 submitBtn.addEventListener("click", submit);
+X.addEventListener("click", () => {
+  playerToken = "X";
+  O.classList.remove("selected");
+  X.classList.toggle("selected");
+});
+O.addEventListener("click", () => {
+  playerToken = "O";
+  X.classList.remove("selected");
+  O.classList.toggle("selected");
+});
 
 function closeModal() {
   modal.style.display = "none";
@@ -46,7 +59,7 @@ function overrideSubmit(event) {
 
 function submit() {
   overrideSubmit(event);
-  player1name = userInput.value;
+  player1Name = userInput.value;
   closeModal();
 }
 
