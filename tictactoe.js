@@ -36,7 +36,12 @@ const submitBtn = document.getElementById("submit");
 const userInput = document.getElementById("player_name");
 const X = document.getElementById("X");
 const O = document.getElementById("O");
+const restart = document.getElementById("restart");
 let playerToken;
+
+restart.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
 submitBtn.addEventListener("click", submit);
 X.addEventListener("click", () => {
   playerToken = "X";
