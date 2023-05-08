@@ -180,7 +180,6 @@ const playGame = (() => {
       }
     });
   }
-  markSpace();
 
   const logTurn = (space, token) => {
     gameboard[space] = token;
@@ -194,67 +193,78 @@ const playGame = (() => {
   };
 
   const checkGameOver = () => {
+    const winningString = document.getElementById("winning_message");
+
     if (
       gameboard[0] === player1Token &&
       gameboard[1] === player1Token &&
       gameboard[2] === player1Token
     ) {
-      display = player1Name + " wins!";
+      winningString.innerText = player1Name + " wins!";
       gameOver();
     } else if (
       gameboard[3] === player1Token &&
       gameboard[4] === player1Token &&
       gameboard[5] === player1Token
     ) {
-      display = player1Name + " wins!";
+      winningString.innerText = player1Name + " wins!";
+      gameOver();
     } else if (
       gameboard[6] === player1Token &&
       gameboard[7] === player1Token &&
       gameboard[8] === player1Token
     ) {
-      display = player1Name + " wins!";
+      winningString.innerText = player1Name + " wins!";
+      gameOver();
     } else if (
       gameboard[0] === player1Token &&
       gameboard[4] === player1Token &&
       gameboard[8] === player1Token
     ) {
-      display = player1Name + " wins!";
+      winningString.innerText = player1Name + " wins!";
+      gameOver();
     } else if (
       gameboard[2] === player1Token &&
       gameboard[4] === player1Token &&
       gameboard[6] === player1Token
     ) {
-      display = player1Name + " wins!";
+      winningString.innerText = player1Name + " wins!";
+      gameOver();
     } else if (
       gameboard[0] === player2Token &&
       gameboard[1] === player2Token &&
       gameboard[2] === player2Token
     ) {
-      display = player2Name + " wins!";
+      winningString.innerText = player2Name + " wins!";
+      gameOver();
     } else if (
       gameboard[3] === player2Token &&
       gameboard[4] === player2Token &&
       gameboard[5] === player2Token
     ) {
-      display = player2Name + " wins!";
+      winningString.innerText = player2Name + " wins!";
+      gameOver();
     } else if (
       gameboard[6] === player2Token &&
       gameboard[7] === player2Token &&
       gameboard[8] === player2Token
     ) {
-      display = player2Name + " wins!";
+      winningString.innerText = player2Name + " wins!";
+      gameOver();
     } else if (
       gameboard[0] === player2Token &&
       gameboard[4] === player2Token &&
       gameboard[8] === player2Token
     ) {
-      display = player2Name + " wins!";
+      winningString.innerText = player2Name + " wins!";
+      gameOver();
     } else if (
       gameboard[2] === player2Token &&
       gameboard[4] === player2Token &&
       gameboard[6] === player2Token
     ) {
-      display = player2Name + " wins!";
+      winningString.innerText = player2Name + " wins!";
+      gameOver();
     } else if (
       gameboard[1] !== undefined &&
       gameboard[2] !== undefined &&
@@ -266,7 +276,8 @@ const playGame = (() => {
       gameboard[8] !== undefined &&
       gameboard[0] !== undefined
     ) {
-      display = "Its a Tie!";
+      winningString.innerText = "Its a Tie!";
+      gameOver();
     }
   };
 
@@ -284,16 +295,24 @@ const playGame = (() => {
   function gameOver() {
     const modalContent1 = document.getElementById("modal_content_1");
     const modalContent2 = document.getElementById("modal_content_2");
+    const modalContent3 = document.getElementById("modal_content_3");
 
     modalContent1.style.display = "none";
     modalContent2.style.display = "none";
+    modalContent3.style.display = "flex";
     modal.style.display = "flex";
+    restart();
   }
 
   function restart() {
     const restart = document.getElementById("restart");
+    const playAgain = document.getElementById("play_again");
     const user1Input = document.getElementById("player1_name");
     const user2Input = document.getElementById("player2_name");
+    const modalContent1 = document.getElementById("modal_content_1");
+    const modalContent3 = document.getElementById("modal_content_3");
+    const X = document.getElementById("X");
+    const O = document.getElementById("O");
 
     restart.addEventListener("click", () => {
       modal.style.display = "flex";
@@ -306,6 +325,25 @@ const playGame = (() => {
       gameboard = [];
       whosX = "";
       whosO = "";
+      X.classList.remove("selected");
+      O.classList.remove("selected");
+      clearGameBoard();
+    });
+
+    playAgain.addEventListener("click", () => {
+      modalContent3.style.display = "none";
+      modalContent1.style.display = "flex";
+      player1Name = "";
+      user1Input.value = "";
+      player2Name = "";
+      user2Input.value = "";
+      player1Token = "";
+      player2Token = "";
+      gameboard = [];
+      whosX = "";
+      whosO = "";
+      X.classList.remove("selected");
+      O.classList.remove("selected");
       clearGameBoard();
     });
 
@@ -331,5 +369,7 @@ const playGame = (() => {
       ninethSpace.innerText = "";
     }
   }
+
   restart();
+  markSpace();
 })();

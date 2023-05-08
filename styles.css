@@ -30,6 +30,8 @@
   display: none;
 }
 
+#game_over,
+#winning_message,
 #modal_message {
   color: white;
   font-size: 3rem;
@@ -71,17 +73,19 @@ input {
   background-color: aquamarine;
 }
 
+#play_again,
 #next_modal,
 #submit {
   color: black;
   font-size: 2rem;
   border-radius: 10px;
-  width: 50%;
+  width: 250px;
 }
 
+#play_again:hover,
 #next_modal:hover,
 #submit:hover {
-  background-color: green;
+  background-color: aquamarine;
   color: black;
 }
 
@@ -91,6 +95,14 @@ input {
   align-items: center;
   justify-content: center;
   gap: 30px;
+}
+
+#modal_content_3 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
 body {
