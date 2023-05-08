@@ -185,6 +185,27 @@ const playGame = (() => {
       gameOver();
     } else if (
       gameboard[0] === player1Token &&
+      gameboard[3] === player1Token &&
+      gameboard[6] === player1Token
+    ) {
+      winningString.innerText = player1Name + " wins!";
+      gameOver();
+    } else if (
+      gameboard[1] === player1Token &&
+      gameboard[4] === player1Token &&
+      gameboard[7] === player1Token
+    ) {
+      winningString.innerText = player1Name + " wins!";
+      gameOver();
+    } else if (
+      gameboard[2] === player1Token &&
+      gameboard[5] === player1Token &&
+      gameboard[8] === player1Token
+    ) {
+      winningString.innerText = player1Name + " wins!";
+      gameOver();
+    } else if (
+      gameboard[0] === player1Token &&
       gameboard[4] === player1Token &&
       gameboard[8] === player1Token
     ) {
@@ -214,6 +235,27 @@ const playGame = (() => {
     } else if (
       gameboard[6] === player2Token &&
       gameboard[7] === player2Token &&
+      gameboard[8] === player2Token
+    ) {
+      winningString.innerText = player2Name + " wins!";
+      gameOver();
+    } else if (
+      gameboard[0] === player2Token &&
+      gameboard[3] === player2Token &&
+      gameboard[6] === player2Token
+    ) {
+      winningString.innerText = player2Name + " wins!";
+      gameOver();
+    } else if (
+      gameboard[1] === player2Token &&
+      gameboard[4] === player2Token &&
+      gameboard[7] === player2Token
+    ) {
+      winningString.innerText = player2Name + " wins!";
+      gameOver();
+    } else if (
+      gameboard[2] === player2Token &&
+      gameboard[5] === player2Token &&
       gameboard[8] === player2Token
     ) {
       winningString.innerText = player2Name + " wins!";
