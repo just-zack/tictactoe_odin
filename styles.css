@@ -4,6 +4,7 @@
   --primary_color: #f1faee;
   --secondary_color: #a8dadc;
   --tertiary_color: #1d3557;
+  font-family: "Russo One", sans-serif;
 }
 
 #modal {
@@ -28,6 +29,7 @@
 
 #modal_content_2 {
   display: none;
+  gap: 30px;
 }
 
 #game_over,
@@ -35,7 +37,7 @@
 #modal_message {
   color: var(--primary_color);
   font-size: 3rem;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 form {
@@ -52,7 +54,7 @@ h3 {
 }
 
 input {
-  color: black;
+  color: var(--tertiary_color);
   font-size: 2.5rem;
   border-radius: 10px;
 }
@@ -77,19 +79,21 @@ input {
 #play_again,
 #next_modal,
 #submit {
-  color: var(--tertiary_color);
   font-size: 2rem;
   border-radius: 10px;
   width: 250px;
   height: 3rem;
+  background-color: var(--tertiary_color);
+  color: var(--primary_color);
+  border: solid 2px var(--primary_color);
 }
 
 #restart:hover,
 #play_again:hover,
 #next_modal:hover,
 #submit:hover {
-  background-color: var(--tertiary_color);
-  color: var(--primary_color);
+  color: var(--tertiary_color);
+  background-color: var(--primary_color);
 }
 
 #modal_content_2 {
@@ -168,4 +172,10 @@ body {
   font-size: 1rem;
   width: 7rem;
   height: 2rem;
+}
+
+#play_as_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
