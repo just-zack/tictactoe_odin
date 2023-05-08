@@ -146,6 +146,9 @@ body {
   width: 100px;
   height: 100px;
   border: solid 2px black;
+  font-size: 5rem;
+  text-align: center;
+  text-justify: center;
 }
 
 #button_container {

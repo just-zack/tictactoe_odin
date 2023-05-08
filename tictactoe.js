@@ -1,36 +1,3 @@
-/*
-1. gameboard = array
-2. Gameboard object/ funtion/ module
-3. Player factory function
-4. game function
-5. display function
-6. Fill space function
-- manipulate dom
-- keep players from taking a filled space
-7. check for game over function
-8. Player enters name
-9. Restart game button
-10. Display element : congratulates winner
-
-
-Player
-- name of player
-- player token
-
-
-Game
-- gameboard array
-- fill space function
-- check for game over function
-- restart game button
-
-gameboard
-- gameboard array
-- display function
-- restart game
-- display ellement
-
-*/
 let player1Name;
 let player2Name;
 let player1Token;
@@ -325,6 +292,7 @@ const playGame = (() => {
       gameboard = [];
       whosX = "";
       whosO = "";
+      whosTurn = "X";
       X.classList.remove("selected");
       O.classList.remove("selected");
       clearGameBoard();
@@ -342,6 +310,7 @@ const playGame = (() => {
       gameboard = [];
       whosX = "";
       whosO = "";
+      whosTurn = "X";
       X.classList.remove("selected");
       O.classList.remove("selected");
       clearGameBoard();
