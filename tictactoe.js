@@ -31,19 +31,18 @@ gameboard
 - display ellement
 
 */
-let playerToken;
 let player1Name;
 let player2Name;
 let player1Token;
 let player2Token;
 let gameboard = [];
-let display;
 
 const playGame = (() => {
   let whosTurn = "X";
   let space;
   let whosX;
   let whosO;
+  let display;
 
   const playerSelection = (() => {
     const modal = document.getElementById("modal");
@@ -67,8 +66,6 @@ const playGame = (() => {
     O.addEventListener("click", () => {
       player1Token = "O";
       player2Token = "X";
-      whosX = player2Name;
-      whosO = player1Name;
       X.classList.remove("selected");
       O.classList.toggle("selected");
     });
@@ -192,68 +189,70 @@ const playGame = (() => {
     } else {
       whosTurn = "X";
     }
+    checkGameOver();
     updateGameMessage();
   };
 
   const checkGameOver = () => {
     if (
+      gameboard[0] === player1Token &&
       gameboard[1] === player1Token &&
-      gameboard[2] === player1Token &&
-      gameboard[3] === player1Token
+      gameboard[2] === player1Token
+    ) {
+      display = player1Name + " wins!";
+      gameOver();
+    } else if (
+      gameboard[3] === player1Token &&
+      gameboard[4] === player1Token &&
+      gameboard[5] === player1Token
     ) {
       display = player1Name + " wins!";
     } else if (
+      gameboard[6] === player1Token &&
+      gameboard[7] === player1Token &&
+      gameboard[8] === player1Token
+    ) {
+      display = player1Name + " wins!";
+    } else if (
+      gameboard[0] === player1Token &&
       gameboard[4] === player1Token &&
-      gameboard[5] === player1Token &&
+      gameboard[8] === player1Token
+    ) {
+      display = player1Name + " wins!";
+    } else if (
+      gameboard[2] === player1Token &&
+      gameboard[4] === player1Token &&
       gameboard[6] === player1Token
     ) {
       display = player1Name + " wins!";
     } else if (
-      gameboard[7] === player1Token &&
-      gameboard[8] === player1Token &&
-      gameboard[9] === player1Token
-    ) {
-      display = player1Name + " wins!";
-    } else if (
-      gameboard[1] === player1Token &&
-      gameboard[5] === player1Token &&
-      gameboard[9] === player1Token
-    ) {
-      display = player1Name + " wins!";
-    } else if (
-      gameboard[3] === player1Token &&
-      gameboard[5] === player1Token &&
-      gameboard[7] === player1Token
-    ) {
-      display = player1Name + " wins!";
-    } else if (
+      gameboard[0] === player2Token &&
       gameboard[1] === player2Token &&
-      gameboard[2] === player2Token &&
-      gameboard[3] === player2Token
-    ) {
-      display = player2Name + " wins!";
-    } else if (
-      gameboard[4] === player2Token &&
-      gameboard[5] === player2Token &&
-      gameboard[6] === player2Token
-    ) {
-      display = player2Name + " wins!";
-    } else if (
-      gameboard[7] === player2Token &&
-      gameboard[8] === player2Token &&
-      gameboard[9] === player2Token
-    ) {
-      display = player2Name + " wins!";
-    } else if (
-      gameboard[1] === player2Token &&
-      gameboard[5] === player2Token &&
-      gameboard[9] === player2Token
+      gameboard[2] === player2Token
     ) {
       display = player2Name + " wins!";
     } else if (
       gameboard[3] === player2Token &&
-      gameboard[5] === player2Token &&
-      gameboard[7] === player2Token
+      gameboard[4] === player2Token &&
+      gameboard[5] === player2Token
+    ) {
+      display = player2Name + " wins!";
+    } else if (
+      gameboard[6] === player2Token &&
+      gameboard[7] === player2Token &&
+      gameboard[8] === player2Token
+    ) {
+      display = player2Name + " wins!";
+    } else if (
+      gameboard[0] === player2Token &&
+      gameboard[4] === player2Token &&
+      gameboard[8] === player2Token
+    ) {
+      display = player2Name + " wins!";
+    } else if (
+      gameboard[2] === player2Token &&
+      gameboard[4] === player2Token &&
+      gameboard[6] === player2Token
     ) {
       display = player2Name + " wins!";
     } else if (
@@ -265,7 +264,7 @@ const playGame = (() => {
       gameboard[6] !== undefined &&
       gameboard[7] !== undefined &&
       gameboard[8] !== undefined &&
-      gameboard[9] !== undefined
+      gameboard[0] !== undefined
     ) {
       display = "Its a Tie!";
     }
@@ -273,13 +272,22 @@ const playGame = (() => {
 
   function updateGameMessage() {
     const gameMessage = document.getElementById("game_message");
+
     if (whosTurn === "X") {
       display = whosX + ", it's your turn";
     } else {
       display = whosO + ", it's your turn";
     }
-    checkGameOver();
     gameMessage.innerText = display;
+  }
+
+  function gameOver() {
+    const modalContent1 = document.getElementById("modal_content_1");
+    const modalContent2 = document.getElementById("modal_content_2");
+
+    modalContent1.style.display = "none";
+    modalContent2.style.display = "none";
+    modal.style.display = "flex";
   }
 
   function restart() {
@@ -296,9 +304,32 @@ const playGame = (() => {
       player1Token = "";
       player2Token = "";
       gameboard = [];
-      playerToken = "";
+      whosX = "";
+      whosO = "";
+      clearGameBoard();
     });
+
+    function clearGameBoard() {
+      const firstSpace = document.getElementById("1a");
+      const secondSpace = document.getElementById("1b");
+      const thirdSpace = document.getElementById("1c");
+      const fourthSpace = document.getElementById("2a");
+      const fifthSpace = document.getElementById("2b");
+      const sixthSpace = document.getElementById("2c");
+      const seventhSpace = document.getElementById("3a");
+      const eighthSpace = document.getElementById("3b");
+      const ninethSpace = document.getElementById("3c");
+
+      firstSpace.innerText = "";
+      secondSpace.innerText = "";
+      thirdSpace.innerText = "";
+      fourthSpace.innerText = "";
+      fifthSpace.innerText = "";
+      sixthSpace.innerText = "";
+      seventhSpace.innerText = "";
+      eighthSpace.innerText = "";
+      ninethSpace.innerText = "";
+    }
   }
   restart();
-  checkGameOver();
 })();
