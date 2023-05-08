@@ -9,16 +9,22 @@
   </head>
   <body>
     <div id="modal" class=".modal">
-      <div id="modal_content">
+      <div id="modal_content_1">
         <h2 id="modal_message">Play a game of Tic-Tac-Toe</h2>
         <form>
-          <label for="player_name">What's your name?</label>
-          <input type="text" id="player_name" name="player_name" />
+          <label for="player1_name">Player 1 what's your name?</label>
+          <input type="text" id="player1_name" name="player1_name" />
           <h3 id="play_as">Play as:</h3>
           <div id="play_as_container">
             <button type="button" id="X" class="play_choice">X</button>
             <button type="button" id="O" class="play_choice">O</button>
           </div>
+          <button type="button" id="next_modal">Player 2</button>
+        </form>
+      </div>
+       <div id="modal_content_2">
+          <label for="player2_name">Player 2 what's your name?</label>
+          <input type="text" id="player2_name" name="player2_name" />
           <button type="submit" id="submit">Start Game</button>
         </form>
       </div>
