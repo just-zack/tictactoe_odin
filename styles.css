@@ -1,9 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  --primary_color: white;
-  --secondary_color: grey;
-  --tertiary_color: black;
+  --primary_color: #f1faee;
+  --secondary_color: #a8dadc;
+  --tertiary_color: #1d3557;
 }
 
 #modal {
@@ -17,7 +17,7 @@
   justify-content: center;
   align-items: center;
   overflow: auto;
-  background-color: black;
+  background-color: var(--tertiary_color);
 }
 
 #modal_content_1 {
@@ -33,7 +33,7 @@
 #game_over,
 #winning_message,
 #modal_message {
-  color: white;
+  color: var(--primary_color);
   font-size: 3rem;
   margin-bottom: 50px;
 }
@@ -48,7 +48,7 @@ form {
 label,
 h3 {
   font-size: 2.5rem;
-  color: white;
+  color: var(--primary_color);
 }
 
 input {
@@ -58,7 +58,7 @@ input {
 }
 
 .play_choice {
-  color: black;
+  color: var(--tertiary_color);
   font-size: 2rem;
   border-radius: 10px;
   width: 70px;
@@ -66,27 +66,30 @@ input {
 }
 
 .play_choice:hover {
-  background-color: aquamarine;
+  background-color: var(--secondary_color);
 }
 
 .selected {
-  background-color: aquamarine;
+  background-color: var(--secondary_color);
 }
 
+#restart,
 #play_again,
 #next_modal,
 #submit {
-  color: black;
+  color: var(--tertiary_color);
   font-size: 2rem;
   border-radius: 10px;
   width: 250px;
+  height: 3rem;
 }
 
+#restart:hover,
 #play_again:hover,
 #next_modal:hover,
 #submit:hover {
-  background-color: aquamarine;
-  color: black;
+  background-color: var(--tertiary_color);
+  color: var(--primary_color);
 }
 
 #modal_content_2 {
@@ -112,10 +115,12 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  background-color: var(--tertiary_color);
 }
 
 #title {
-  font-size: 3rem;
+  font-size: 5rem;
+  color: var(--primary_color);
 }
 
 #game_container {
@@ -139,7 +144,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  background-color: beige;
+  background-color: var(--primary_color);
 }
 
 .game_section {
